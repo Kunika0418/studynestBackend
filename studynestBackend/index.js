@@ -8,6 +8,7 @@ import adminRoutes from "./api/admin.js";
 import authRoutes from "./api/auth.js";
 import propertyAuthRoutes from "./api/propertyauth.js";
 import testimonialRoutes from "./api/testimonial.js";
+import blogRoutes from './api/blogs.js';
 
 dotenv.config();
 
@@ -26,7 +27,9 @@ const allowedOrigins = [
   "https://studynests.com",
   "https://studynestfrontend.vercel.app",
   "https://studynestfrontend.vercel.app",
-  "https://studynest-frontend.vercel.app"
+  "https://studynest-frontend.vercel.app",
+  "https://studynest-backend.vercel.app",
+
 ];
 
 app.use(
@@ -54,6 +57,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/propertyauth", propertyAuthRoutes);
 app.use("/api/testimonial", testimonialRoutes);
+app.use('/api/blogs', blogRoutes);
 
 // Endpoint to handle form submission
 app.post("/send-query", async (req, res) => {
